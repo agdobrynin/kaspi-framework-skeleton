@@ -1,0 +1,9 @@
+.bd-main-container {
+    margin-top: 2rem;
+}
+.control.has-icons-right textarea{
+    padding-right: 2.25em;
+}
+.control.has-icons-left textarea {
+    padding-left: 2.25em;
+}

@@ -1,0 +1,19 @@
+{
+  "require": {
+    "php": "^7.2",
+    "ext-pdo": "*",
+    "symfony/dotenv": "v4.3.4",
+    "kaspi/kapi-framework": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/src"
+    }
+  },
+  "config": {
+    "process-timeout": 0
+  },
+  "scripts": {
+    "run": "php -S 0.0.0.0:8080 -t public/"
+  }
+}

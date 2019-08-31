@@ -1,0 +1,11 @@
+.idea
+.env
+phinx.yml
+.php_cs.cache
+/vendor
+/cache/*
+!/cache/.gitkeep
+/logs/*
+!/logs/.gitkeep
+/store/*
+!/store/.gitkeep
