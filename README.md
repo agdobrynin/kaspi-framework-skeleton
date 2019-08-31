@@ -18,10 +18,9 @@ cp phinx.yml.example phinx.yml
 ````bash
 composer install
 ````
-запускаем миграции БД для проекта
+запускаем миграции БД для проекта (пока ищем подходящее решение)
 ````bash
-php vendor/bin/phinx init
-php vendor/bin/phinx migrate
+
 ````
 
 стартуем проект с встроенным web сервером в php
