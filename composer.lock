@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/agdobrynin/kaspi-framework.git",
-                "reference": "891be0ab3926e51a4e7d311465289f33b030ff01"
+                "reference": "e00be7167250f88029ec0b10674c74dc91d52772"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/agdobrynin/kaspi-framework/zipball/891be0ab3926e51a4e7d311465289f33b030ff01",
-                "reference": "891be0ab3926e51a4e7d311465289f33b030ff01",
+                "url": "https://api.github.com/repos/agdobrynin/kaspi-framework/zipball/e00be7167250f88029ec0b10674c74dc91d52772",
+                "reference": "e00be7167250f88029ec0b10674c74dc91d52772",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "micro",
                 "router"
             ],
-            "time": "2019-08-31T11:33:13+00:00"
+            "time": "2019-08-31T19:01:11+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

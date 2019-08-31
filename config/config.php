@@ -1,5 +1,6 @@
 <?php
 return [
+    'displayErrorDetails' => true,
     'db' => [
         /* для соединения через \PDO */
         'dsn' => getenv('DB_PDO'),
