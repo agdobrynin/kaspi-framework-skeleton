@@ -5,7 +5,6 @@ namespace App;
 
 use Kaspi\App;
 use Kaspi\Config;
-use Kaspi\Container;
 use Kaspi\Exception\RouterException;
 use Kaspi\Request;
 use Kaspi\Response;
