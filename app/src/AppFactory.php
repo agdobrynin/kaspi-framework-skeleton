@@ -16,7 +16,7 @@ class AppFactory
     public static function create(Config $config): App
     {
         // Экземпляр приложения
-        $app = new App($config, new Request(), new Response());
+        $app = new App($config);
         // Установка локали
         $app->setLocale();
         // Установка таймзоны приложения
