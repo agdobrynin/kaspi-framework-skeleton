@@ -14,6 +14,6 @@
     "process-timeout": 0
   },
   "scripts": {
-    "run": "php -S 0.0.0.0:8080 -t public/"
+    "serve": "php -S 0.0.0.0:8080 -t public/"
   }
 }
