@@ -25,7 +25,7 @@ composer install
 
 стартуем проект с встроенным web сервером в php
 ````bash
-composer run
+composer serve
 ````
 переходим по адресу http://localhost:8080 
 
