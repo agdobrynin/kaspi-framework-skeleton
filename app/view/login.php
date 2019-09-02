@@ -3,7 +3,7 @@
 $pageTitle = 'Авторзация';
 $this->layout('layouts/main', compact('pageTitle'));
 
-$loginPath = $this->getExtension('routeByName')('login') ?? '/loginInto';
+$loginPath = $this->getExtension('pathFor')('login');
 ?>
 <form class="form-horizontal" method="post" action="<?php echo $loginPath?>">
     <input type="hidden" name="referer" value="<?php echo $referer ?? ''; ?>">

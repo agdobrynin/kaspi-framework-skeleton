@@ -2,7 +2,7 @@
 /** @var \Kaspi\View $this */
 $pageTitle = empty($Task->id) ? 'Добавить новую задачу' : 'Редактирование задачи';
 $this->layout('layouts/main', compact('pageTitle'));
-$formAction = $this->pathFor('task.add');
+$formAction = $this->getExt('pathFor')('task.add');
 ?>
 
 <form class="form-horizontal" method="post" action="<?php echo $formAction?>">

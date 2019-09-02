@@ -1,29 +1,26 @@
 <?php
 
-use \Kaspi\Exception\ViewException;
-use Kaspi\View;
+use Kaspi\{View, Config, Router, Request};
 
+$container = $app->container;
 // Контейнер view
-$app->getContainer()->set(View::class, static function () use ($config, $app): View {
-    try {
+$app->getContainer()->set(View::class, static function () use ($container): View {
         /** @var View $view */
-        $view = new View($config, $app->getContainer());
-
+        $view = new View($container->{Config::class});
         // Пример добавления экспешнеша для View
-        // routeByName отдает паттрен роута по имени если есть
-        try {
-            /** @var \Kaspi\Router $router */
-            $router = $app->getContainer()->{\Kaspi\Router::class};
-            $view->addExtension('routeByName', static function ($pathName) use ($router) {
-                return $router->getRoutePatternByName($pathName) ?: '';
-            });
-        } catch (\Kaspi\Exception\ContainerException $exception) {
-            // TODO надо бы добавить логирование для приложения, например через monolog
-        }
-
-    } catch (ViewException $exception) {
-        throw new \Kaspi\Exception\AppException($exception->getMessage());
-    }
+        // pathFor отдает паттрен роута по имени если есть
+        /** @var Router $router */
+        $router = $container->{Router::class};
+        $view->addExtension('pathFor', static function ($pathName) use ($router) {
+            return $router->getRoutePatternByName($pathName) ?: '';
+        });
+        // Пример добавления экспешнеша для View
+        // URI вызов в шаблоне $this->addExtension('URI') вернет текущий URI из объекта REQUEST
+        /** @var Request $request */
+        $request = $container->{Request::class};
+        $view->addExtension('URI', static function () use ($request) {
+            return $request->uri();
+        });
 
     return $view;
 });

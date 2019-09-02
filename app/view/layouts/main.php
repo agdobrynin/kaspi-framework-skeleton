@@ -22,13 +22,13 @@
         <div id="navbarMain" class="navbar-menu">
             <div class="navbar-start">
 
-                <a class="navbar-item" href="<?php echo isRouteName('main') ? '#' : $this->pathFor('main'); ?>">
+                <a class="navbar-item" href="<?php echo isRouteName('main') ? '#' : $this->getExt('pathFor')('main'); ?>">
                 <span class="icon"><i class="fas fa-home"></i></span>&nbsp;Home
                 </a>
-                <a class="navbar-item" href="<?php echo isRouteName('task.add') ? '#' : $this->pathFor('task.add'); ?>">
+                <a class="navbar-item" href="<?php echo isRouteName('task.add') ? '#' : $this->getExt('pathFor')('task.add'); ?>">
                     <span class="icon"><i class="fas fa-plus"></i></span>&nbsp;Добавить задачу
                 </a>
-                <a class="navbar-item"  href="<?php echo isRouteName('fake.delete') ? '#' : ($this->pathFor('fake.delete') ?? '#'); ?>">
+                <a class="navbar-item"  href="<?php echo isRouteName('fake.delete') ? '#' : ($this->getExt('pathFor')('fake.delete') ?? '#'); ?>">
                     <span class="icon"><i class="fas fa-trash"></i></span>&nbsp;Удалить тестовые данные
                 </a>
             </div>
@@ -37,12 +37,12 @@
                 <div class="navbar-item">
                     <div class="buttons">
                         <?php if (!App\Auth::isAuth()) {?>
-                            <a class="button is-warning" href="<?php echo $this->pathFor('login')?>">
+                            <a class="button is-warning" href="<?php echo $this->getExt('pathFor')('login')?>">
                                 <span class="icon"><i class="fas fa-lock"></i></span>
                                 <span>Вход</span>
                             </a>
                         <?php } else {?>
-                            <a class="button is-link" href="<?php echo $this->pathFor('logout')?>">
+                            <a class="button is-link" href="<?php echo $this->getExt('pathFor')('logout')?>">
                                 <span class="icon"><i class="fas fa-lock-open"></i></span>
                                 <span>Выход</span>
                             </a>
