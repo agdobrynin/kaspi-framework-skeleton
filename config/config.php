@@ -3,11 +3,18 @@ return [
     'displayErrorDetails' => true,
     'db' => [
         /* для соединения через \PDO */
-        'dsn' => getenv('DB_PDO'),
-        'user' => getenv('DB_USER') ?: '',
-        'password' => getenv('DB_PASS') ?: '',
+        'dsn' => 'sqlite: '.__DIR__.'/../store/db.db',
+        'user' => '',
+        'password' => '',
         'options' => [
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+        ],
+        /* миграции в БД vendor/bin/kaspi-migration --help */
+        'migration' => [
+            /* куда складывать и откуда файлы миграций */
+            'path' => __DIR__.'/../migration',
+            /* имя таблицы миграций, не обязательное поле, по умолчанию будет таблицу migration */
+            'table' => 'migration',
         ],
     ],
     'view' => [
