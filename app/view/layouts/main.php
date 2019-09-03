@@ -28,9 +28,11 @@
                 <a class="navbar-item" href="<?php echo isRouteName('task.add') ? '#' : $this->getExt('pathFor', 'task.add'); ?>">
                     <span class="icon"><i class="fas fa-plus"></i></span>&nbsp;Добавить задачу
                 </a>
-                <a class="navbar-item"  href="<?php echo isRouteName('fake.delete') ? '#' : ($this->getExt('pathFor', 'fake.delete') ?? '#'); ?>">
+                <a class="navbar-item"  href="<?php echo $this->getExt('pathFor', 'fake.delete')?>">
                     <span class="icon"><i class="fas fa-trash"></i></span>&nbsp;Удалить тестовые данные
                 </a>
+                <a class="navbar-item"  href="<?php echo $this->getExt('pathFor', 'fake.create') ?>">
+                    <span class="icon"><i class="fas fa-folder-plus"></i></span>&nbsp;Создать тестовые данные
             </div>
 
             <div class="navbar-end">
