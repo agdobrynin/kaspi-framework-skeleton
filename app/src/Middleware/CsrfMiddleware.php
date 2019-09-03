@@ -26,7 +26,11 @@ class CsrfMiddleware extends Middleware
                 "<input type='hidden' value='{$CsrfGuard->getTokenValue()}' name='{$CsrfGuard->getTokenName()}'>"
             );
         } catch (CsrfGuardException $exception) {
-            throw new AppException('Ошибка верификации CSRF токена полученного с формы. ', 500, $exception);
+            $msg = 'Ошибка верификации CSRF токена полученного с формы. ';
+            if ($referer = $this->request->getEnv('HTTP_REFERER')) {
+                $msg .= "<a href=\"{$referer}\">Форма отправитель тут</a>";
+            }
+            throw new AppException($msg, 500, $exception);
         }
     }
 }
