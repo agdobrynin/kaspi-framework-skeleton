@@ -3,7 +3,7 @@ return [
     'displayErrorDetails' => true,
     'db' => [
         /* для соединения через \PDO */
-        'dsn' => 'sqlite: '.__DIR__.'/../store/db.db',
+        'dsn' => 'sqlite:'.__DIR__.'/../store/db.db',
         'user' => '',
         'password' => '',
         'options' => [
