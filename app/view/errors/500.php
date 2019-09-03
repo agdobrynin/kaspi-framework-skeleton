@@ -4,7 +4,7 @@ $this->layout('layouts/empty');
 ?>
 
 <div class="columns is-vcentered">
-    <div class="column is-4 has-text-centered" style="font-size: 10rem;"><?php echo $code ?: 500?></div>
+    <div class="column is-4 has-text-centered stripe-6" style="font-size: 10rem;"><?php echo $code ?: 500?></div>
     <div class="column">
         <h1 class="title">Упс! У нас что-то сломалось</h1>
         <h1 class="subtitle"><?php echo $message ?></h1>

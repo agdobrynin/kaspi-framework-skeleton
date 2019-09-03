@@ -1,8 +1,10 @@
 <?php
+use Kaspi\FlashMessages as FM;
 /** @var \Kaspi\View $this */
 $pageTitle = empty($Task->id) ? 'Добавить новую задачу' : 'Редактирование задачи';
 $this->layout('layouts/main', compact('pageTitle'));
 $formAction = $this->getExt('pathFor', 'task.add');
+$formValidation = FM::displayAsObjects(FM::FROM_VALIDATOR);
 ?>
 
 <form class="form-horizontal" method="post" action="<?php echo $formAction?>">
@@ -49,9 +51,17 @@ $formAction = $this->getExt('pathFor', 'task.add');
     <div class="field">
         <label class="label">Задача</label>
         <div class="control has-icons-left has-icons-right">
-            <textarea rows="5" name="content" required class="textarea"><?php echo $Task->content ?? ''; ?></textarea>
+            <textarea rows="5" name="content" required
+                      class="textarea <?php echo !empty($formValidation->content) ? 'is-danger' : '' ?>"
+            ><?php echo $Task->content ?? ''; ?></textarea>
             <span class="icon is-small is-left"><i class="fas fa-globe"></i></span>
+            <?php if (!empty($formValidation->content)) { ?>
+                <span class="icon is-small is-right"><i class="fas fa-exclamation-triangle"></i></span>
+            <?php }?>
         </div>
+        <?php if (!empty($formValidation->content)) { ?>
+            <p class="help is-danger"><?php echo $formValidation->content?></p>
+        <?php } ?>
     </div>
 
     <?php if (App\Auth::isAuth() && !empty($Task->id)) { ?>

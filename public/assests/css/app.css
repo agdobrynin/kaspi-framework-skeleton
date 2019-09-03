@@ -7,3 +7,22 @@
 .control.has-icons-left textarea {
     padding-left: 2.25em;
 }
+.stripe-6 {
+    background: repeating-linear-gradient(
+            to right,
+            #f6ba52,
+            #f6ba52 10px,
+            #ffd180 10px,
+            #ffd180 20px
+    );
+}
+
+.stripe-7 {
+    background: repeating-linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2) 10px,
+            rgba(0, 0, 0, 0.3) 10px,
+            rgba(0, 0, 0, 0.3) 20px
+    );
+}

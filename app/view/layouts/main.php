@@ -69,6 +69,7 @@
             <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
             is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
         </p>
+        <p class="has-text-grey-lighter"><small>текущий uri : <?php echo $this->getExt('URI')?></small></p>
     </div>
 </footer>
 <script src="/assests/js/app.js"></script>
