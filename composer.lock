@@ -62,24 +62,28 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/agdobrynin/kaspi-framework.git",
-                "reference": "f037f8c59d90a079ad411dcc04f72e9a396e2011"
+                "reference": "d7585b708a123c0136264f25d327be0497945f5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/agdobrynin/kaspi-framework/zipball/f037f8c59d90a079ad411dcc04f72e9a396e2011",
-                "reference": "f037f8c59d90a079ad411dcc04f72e9a396e2011",
+                "url": "https://api.github.com/repos/agdobrynin/kaspi-framework/zipball/d7585b708a123c0136264f25d327be0497945f5d",
+                "reference": "d7585b708a123c0136264f25d327be0497945f5d",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-pdo": "*",
                 "php": "^7.2",
-                "ralouphie/getallheaders": "^3.0.3"
+                "ralouphie/getallheaders": "^3.0.3",
+                "splitbrain/php-cli": "^1.1"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.15",
                 "roave/security-advisories": "dev-master"
             },
+            "bin": [
+                "bin/kaspi-migrate"
+            ],
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -107,7 +111,7 @@
                 "micro",
                 "router"
             ],
-            "time": "2019-09-03T18:49:11+00:00"
+            "time": "2019-09-06T14:36:59+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -148,6 +152,57 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "splitbrain/php-cli",
+            "version": "1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splitbrain/php-cli.git",
+                "reference": "e982d40d074ab9f2669c3c0a2e40559b098cd894"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splitbrain/php-cli/zipball/e982d40d074ab9f2669c3c0a2e40559b098cd894",
+                "reference": "e982d40d074ab9f2669c3c0a2e40559b098cd894",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.5.*"
+            },
+            "suggest": {
+                "psr/log": "Allows you to make the CLI available as PSR-3 logger"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "splitbrain\\phpcli\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Gohr",
+                    "email": "andi@splitbrain.org"
+                }
+            ],
+            "description": "Easy command line scripts for PHP with opt parsing and color output. No dependencies",
+            "keywords": [
+                "argparse",
+                "cli",
+                "command line",
+                "console",
+                "getopt",
+                "optparse",
+                "terminal"
+            ],
+            "time": "2018-09-29T07:51:34+00:00"
         },
         {
             "name": "symfony/dotenv",
