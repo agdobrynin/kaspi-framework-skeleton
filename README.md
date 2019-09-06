@@ -20,7 +20,8 @@ composer install
 ````
 запускаем миграции БД для проекта (пока ищем подходящее решение)
 ````bash
-
+ vendor/bin/kaspi-migrate -c config/config.php init
+ vendor/bin/kaspi-migrate -c config/config.php up
 ````
 
 стартуем проект с встроенным web сервером в php
