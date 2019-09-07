@@ -11,8 +11,8 @@ $app->getContainer()->set(View::class, static function () use ($container): View
         // pathFor отдает паттрен роута по имени если есть
         /** @var Router $router */
         $router = $container->{Router::class};
-        $view->addExtension('pathFor', static function ($pathName) use ($router) {
-            return $router->getRoutePatternByName($pathName) ?: '';
+        $view->addExtension('pathFor', static function (string $pathName, ?array $arg = null) use ($router) {
+            return $router->getRoutePatternByName($pathName, $arg) ?: '';
         });
         // Пример добавления экспешнеша для View
         // URI вызов в шаблоне $this->addExtension('URI') вернет текущий URI из объекта REQUEST

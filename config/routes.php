@@ -1,12 +1,14 @@
 <?php
-$app->get('/', App\Controllers\Index::class)->setName('main');
+$app->get('/', App\Controllers\Index::class)
+    ->middleware(App\Middleware\TemplateTransform::class)
+    ->setName('main');
+$app->get('/page/(?<page>\d+)', App\Controllers\Index::class)
+    ->setName('task.page');
 
-$app->get('/task/add', App\Controllers\Task\Add::class)
-    ->setName('task.add')
-    ->middleware(App\Middleware\TemplateTransform::class);
+$app->get('/task/add', App\Controllers\Task\Add::class)->setName('task.add');
+$app->get('/task/view/(?<id>\d+)', App\Controllers\Task\View::class)->setName('task.view');
+$app->get('/task/edit/(?<id>\d+)', App\Controllers\Task\Edit::class)->setName('task.edit');
 $app->post('/task/add', App\Controllers\Task\Store::class);
-
-$app->get('/task/show/(?<id>\d+)', App\Controllers\Task\Show::class)->setName('task.show');
 
 // Работа с тестовыми данными
 $app->get('/fake/create', App\Controllers\FakeData::class . '@create')->setName('fake.create');

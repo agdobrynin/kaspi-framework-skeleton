@@ -9,7 +9,7 @@ class Add extends Controller
 {
     public function __invoke(): void
     {
-        /** @var Show $view */
+        /** @var View $view */
         $view = $this->container->{View::class};
         $this->response->setBody($view->render('task.form'));
     }

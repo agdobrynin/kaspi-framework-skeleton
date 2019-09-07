@@ -17,7 +17,7 @@ class TaskCollection
     /** @var Collection */
     protected $TaskCollection;
 
-    public function __construct(int $page, int $pageSize, ?string $orderColumn, ?string $orderType)
+    public function __construct(int $page, int $pageSize, ?string $orderColumn = null, ?string $orderType = null)
     {
         $this->page = $page;
         $this->pageSize = $pageSize;

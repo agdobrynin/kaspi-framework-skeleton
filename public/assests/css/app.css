@@ -26,3 +26,9 @@
             rgba(0, 0, 0, 0.3) 20px
     );
 }
+input[readonly] {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    box-shadow: none;
+    color: #7a7a7a;
+}

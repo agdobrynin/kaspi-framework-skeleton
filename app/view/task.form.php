@@ -2,9 +2,10 @@
 use Kaspi\FlashMessages as FM;
 /** @var \Kaspi\View $this */
 $pageTitle = empty($Task->id) ? 'Добавить новую задачу' : 'Редактирование задачи';
-$this->layout('layouts/main', compact('pageTitle'));
 $formAction = $this->getExt('pathFor', 'task.add');
 $formValidation = FM::displayAsObjects(FM::FROM_VALIDATOR);
+
+$this->layout('layouts/main', compact('pageTitle'));
 ?>
 
 <form class="form-horizontal" method="post" action="<?php echo $formAction?>">
@@ -15,7 +16,7 @@ $formValidation = FM::displayAsObjects(FM::FROM_VALIDATOR);
     <div class="field">
         <label class="label">Имя</label>
         <div class="control has-icons-left has-icons-right">
-            <input type="text" <?php echo !empty($Task->id) ? 'readonly ' : ''; ?>
+            <input type="text" <?php echo !empty($Task->id) ? 'readonly' : ''; ?>
                    required
                    class="input <?php echo !empty($formValidation->userName) ? 'is-danger' : '' ?>"
                    name="userName"
@@ -67,8 +68,9 @@ $formValidation = FM::displayAsObjects(FM::FROM_VALIDATOR);
     <?php if (App\Auth::isAuth() && !empty($Task->id)) { ?>
         <div class="field">
             <div class="control">
-                <label class="checkbox" value="1" name="completed"
-                    <?php echo $Task->completed ? 'checked' : ''; ?>><input type="checkbox"> Выполено</label>
+                <label class="checkbox">
+                    <input type="checkbox" value="1" name="completed" <?php echo $Task->completed ? 'checked' : ''; ?>> Выполнено
+                </label>
             </div>
         </div>
     <?php } ?>
