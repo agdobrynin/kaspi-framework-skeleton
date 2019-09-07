@@ -9,10 +9,9 @@ git clone https://github.com/agdobrynin/kaspi-framework-skeleton.git
 ````bash
 cd kaspi-framework-skeleton
 ````
-копируем и настраиваем .env и миграции phinx.yml
+копируем и настраиваем .env
 ````bash
 cp .env.dist .env
-cp phinx.yml.example phinx.yml
 ````
 устанавливаем зависимсти
 ````bash
