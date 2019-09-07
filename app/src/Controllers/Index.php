@@ -8,7 +8,7 @@ use Kaspi\View;
 
 class Index extends Controller
 {
-    private const PAGE_SIZE = 3;
+    private const PAGE_SIZE = 6;
     public function __invoke()
     {
         $page = $this->request->getAttribute('page') ?:1;
