@@ -38,7 +38,7 @@ $this->layout('layouts/main', compact(['pageTitle', 'flashFormValidator']));
                 <th>Email</th>
                 <th><abbr title="Статус задачи, Изменена администратором">Статус</abbr></th>
                 <?php if (App\Auth::isAuth()) { ?>
-                    <th><abbr title="Редатировать">Изм.</abbr></th>
+                    <th> </th>
                 <?php } ?>
             </tr>
             </thead>
@@ -59,7 +59,9 @@ $this->layout('layouts/main', compact(['pageTitle', 'flashFormValidator']));
                             <span class="icon"><i class="fas <?php echo (int)$Task->editByAdmin?'fa-user-shield has-text-info':'fa-user has-text-success'?>"></i></span></abbr>
                     </td>
                     <?php if (App\Auth::isAuth()) { ?>
-                        <td><a href="<?php echo $this->getExt('pathFor', 'task.view', ['id' => $Task->id]) ?>">+</a></td>
+                        <td class="has-text-centered">
+                        <a href="<?php echo $this->getExt('pathFor', 'task.edit', ['id' => $Task->id]) ?>" class="button is-small is-link">Изменить</a>
+                        </td>
                     <?php } ?>
                 </tr>
             <?php } ?>
