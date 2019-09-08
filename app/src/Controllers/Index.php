@@ -17,8 +17,8 @@ class Index extends Controller
         // asc или desc
         $sortFilter['sortOrder'] = strtolower($this->request->getParam('sortOrder'));
         $TaskConnection = new TaskCollection($page, self::PAGE_SIZE, $sortFilter['sortField'], $sortFilter['sortOrder']);
+        $Tasks = $TaskConnection->collection()->get();
         $totalPages = $TaskConnection->pageTotal();
-        $Tasks = $TaskConnection->page();
         /** @var View $view */
         $view = $this->container->{View::class};
         $sortFilterString = http_build_query($sortFilter);

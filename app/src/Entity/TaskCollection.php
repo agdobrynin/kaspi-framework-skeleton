@@ -24,25 +24,16 @@ class TaskCollection
         $this->orderColumn = $orderColumn;
         $this->orderType = $orderType;
         $this->TaskCollection = new Collection(new Task());
-    }
-
-    public function setPage(int $page): void
-    {
-        $this->page = $page;
-    }
-
-    public function page(): array
-    {
-        try {
-            $this->TaskCollection->addLimit(new Limit($this->page, $this->pageSize));
-            if ($this->orderColumn && $this->orderType) {
-                $this->TaskCollection->addOrder((new Order())->add($this->orderColumn, $this->orderType));
-            }
-
-            return $this->TaskCollection->prepare()->fetchAll();
-        } catch (OrmException $exception) {
-            throw new AppException($exception->getMessage());
+        $this->TaskCollection->addLimit(new Limit($this->page, $this->pageSize));
+        if ($this->orderColumn && $this->orderType) {
+            $this->TaskCollection->addOrder((new Order())->add($this->orderColumn, $this->orderType));
         }
+        $this->TaskCollection->prepare();
+    }
+
+    public function collection(): Collection
+    {
+        return $this->TaskCollection;
     }
 
     public function pageTotal(): int
