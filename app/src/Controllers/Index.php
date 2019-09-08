@@ -15,13 +15,13 @@ class Index extends Controller
         // имя поля для сортировки
         $sortFilter['sortField'] = $this->request->getParam('sortField');
         // asc или desc
-        $sortFilter['sortOrder'] = strtolower($this->request->getParam('sortOrder'));
+        $sortFilter['sortOrder'] = $this->request->getParam('sortOrder');
         $TaskConnection = new TaskCollection($page, self::PAGE_SIZE, $sortFilter['sortField'], $sortFilter['sortOrder']);
         $Tasks = $TaskConnection->collection()->getEntities();
         $totalPages = $TaskConnection->pageTotal();
         /** @var View $view */
         $view = $this->container->{View::class};
-        $sortFilterString = http_build_query($sortFilter);
+        $sortFilterString = $sortFilter['sortField'] ? http_build_query($sortFilter) : '';
         $this->response->setBody(
             $view->render('index', compact(['Tasks', 'page', 'totalPages', 'sortFilter', 'sortFilterString']))
         );

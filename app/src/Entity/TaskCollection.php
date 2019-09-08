@@ -22,7 +22,7 @@ class TaskCollection
         $this->page = $page;
         $this->pageSize = $pageSize;
         $this->orderColumn = $orderColumn;
-        $this->orderType = $orderType;
+        $this->orderType = strtoupper($orderType) === Order::ASC ? Order::ASC : Order::DESC;
         $this->TaskCollection = new Collection(new Task());
         $this->TaskCollection->addLimit(new Limit($this->page, $this->pageSize));
         if ($this->orderColumn && $this->orderType) {
