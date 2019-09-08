@@ -14,7 +14,8 @@ use Kaspi\Controller;
 
 class FakeData extends Controller
 {
-    public const MAX_TASK = 20;
+    public const MAX_TASK = 3000;
+    public const ONE_STEP_TASK = 50;
 
     public function create(): void
     {
@@ -31,7 +32,7 @@ class FakeData extends Controller
             }
             $Task->getEntityBuilder()->useTransaction = false;
             $Task->getEntityBuilder()::getPdo()->beginTransaction();
-            for ($i = 0; $i < self::MAX_TASK; ++$i) {
+            for ($i = 0; $i < self::ONE_STEP_TASK; ++$i) {
                 $Task->userName = $Faker->name;
                 $Task->email = $Faker->email;
                 $Task->content = implode(PHP_EOL.PHP_EOL, $Faker->paragraphs());
@@ -43,7 +44,7 @@ class FakeData extends Controller
         } catch (OrmException $exception) {
             throw new AppException($exception->getMessage());
         }
-        FlashMessages::addSuccess('Добавлено '.self::MAX_TASK.' задач');
+        FlashMessages::addSuccess('Добавлено '.self::ONE_STEP_TASK.' задач');
         $this->response->redirect($this->pathFor('main'));
     }
 
