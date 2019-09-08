@@ -1,26 +1,25 @@
 <?php
-
 use Kaspi\FlashMessages as FM;
-
 $flashFormValidator = FM::displayAsObjects(FM::FROM_VALIDATOR);
 $pageTitle = 'Задачи в списке';
+/** @var \Kaspi\View $this */
 $this->layout('layouts/main', compact(['pageTitle', 'flashFormValidator']));
+$sort = $sortFilterString ? '?' . $sortFilterString : '';
 ?>
-
 <?php if ($totalPages) { ?>
     <nav class="pagination" role="navigation" aria-label="pagination">
         <?php if ($page > 1) { ?>
-            <a href="<?php echo $this->getExt('pathFor', 'task.page', ['page' => $page - 1]) ?>"
+            <a href="<?php echo $this->getExt('pathFor', 'task.page', ['page' => $page - 1]).$sort ?>"
                class="pagination-previous">назад</a>
         <?php } ?>
         <?php if ($page < $totalPages) { ?>
-            <a href="<?php echo $this->getExt('pathFor', 'task.page', ['page' => $page + 1]) ?>"
+            <a href="<?php echo $this->getExt('pathFor', 'task.page', ['page' => $page + 1]).$sort ?>"
                class="pagination-next">вперед</a>
         <?php } ?>
         <ul class="pagination-list">
             <?php for ($i = 1; $i <= $totalPages; $i++) { ?>
                 <li><a
-                            href="<?php echo $this->getExt('pathFor', 'task.page', ['page' => $i]) ?>"
+                            href="<?php echo $this->getExt('pathFor', 'task.page', ['page' => $i]).$sort ?>"
                             class="pagination-link <?php echo $i === (int)$page ? 'is-current' : '' ?>"><?php echo $i ?></a>
                 </li>
             <?php } ?>
@@ -34,9 +33,9 @@ $this->layout('layouts/main', compact(['pageTitle', 'flashFormValidator']));
             <thead>
             <tr>
                 <th><abbr title="Номер задачи">№</abbr></th>
-                <th>Пользователь</th>
-                <th>Email</th>
-                <th><abbr title="Статус задачи, Изменена администратором">Статус</abbr></th>
+                <th>Пользователь <?php $this->include('sort.php', compact('sortFilter'))?></th>
+                <th>Email <?php $this->include('sort.php', compact('sortFilter'))?></th>
+                <th><abbr title="Статус задачи, Изменена администратором">Статус</abbr> <?php $this->include('sort.php', compact('sortFilter'))?></th>
                 <?php if (App\Auth::isAuth()) { ?>
                     <th> </th>
                 <?php } ?>
