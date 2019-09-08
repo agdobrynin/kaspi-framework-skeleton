@@ -33,9 +33,15 @@ $sort = $sortFilterString ? '?' . $sortFilterString : '';
             <thead>
             <tr>
                 <th><abbr title="Номер задачи">№</abbr></th>
-                <th>Пользователь <?php $this->include('sort.php', compact('sortFilter'))?></th>
-                <th>Email <?php $this->include('sort.php', compact('sortFilter'))?></th>
-                <th><abbr title="Статус задачи, Изменена администратором">Статус</abbr> <?php $this->include('sort.php', compact('sortFilter'))?></th>
+                <th>Пользователь
+                    <?php $this->include('sort.php', ['sortFilter' => $sortFilter, 'sortField' => 'userName'])?>
+                </th>
+                <th>Email
+                    <?php $this->include('sort.php', ['sortFilter' => $sortFilter, 'sortField' => 'email'])?>
+                </th>
+                <th><abbr title="Статус задачи, Изменена администратором">Статус</abbr>
+                    <?php $this->include('sort.php', ['sortFilter' => $sortFilter, 'sortField' => 'completed'])?>
+                </th>
                 <?php if (App\Auth::isAuth()) { ?>
                     <th> </th>
                 <?php } ?>
