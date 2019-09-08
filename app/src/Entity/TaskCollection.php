@@ -39,7 +39,7 @@ class TaskCollection
                 $this->TaskCollection->addOrder((new Order())->add($this->orderColumn, $this->orderType));
             }
 
-            return $this->TaskCollection->getCollection();
+            return $this->TaskCollection->get()->fetchAll();
         } catch (OrmException $exception) {
             throw new AppException($exception->getMessage());
         }
