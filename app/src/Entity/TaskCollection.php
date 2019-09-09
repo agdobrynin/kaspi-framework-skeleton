@@ -18,7 +18,7 @@ class TaskCollection
     {
         $this->pageSize = $pageSize;
         $orderType = strtoupper($orderType) === Order::ASC ? Order::ASC : Order::DESC;
-        $this->TaskCollection = new Collection(new TaskEntityCollection());
+        $this->TaskCollection = new Collection(new TaskForCollection());
         $this->TaskCollection->addLimit(new Limit($page, $this->pageSize));
         if ($orderColumn && $orderType) {
             $this->TaskCollection->addOrder((new Order())->add($orderColumn, $orderType));

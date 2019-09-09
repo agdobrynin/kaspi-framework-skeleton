@@ -6,10 +6,10 @@ use Kaspi\Orm\Entity;
 
 /**
  * Укороченное описание entity для выборки в коллекции, без поля контент.
- * Class TaskEntityCollection
+ * Class TaskForCollection
  * @package App\Entity
  */
-class TaskEntityCollection extends Entity
+class TaskForCollection extends Entity
 {
     /** @var string Имя таблицы Entity */
     protected $table = 'Tasks';
