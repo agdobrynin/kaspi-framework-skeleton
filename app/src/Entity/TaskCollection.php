@@ -10,23 +10,18 @@ use Kaspi\Orm\Query\Order;
 
 class TaskCollection
 {
-    protected $page;
     protected $pageSize;
-    protected $orderColumn;
-    protected $orderType;
     /** @var Collection */
     protected $TaskCollection;
 
     public function __construct(int $page, int $pageSize, ?string $orderColumn = null, ?string $orderType = null)
     {
-        $this->page = $page;
         $this->pageSize = $pageSize;
-        $this->orderColumn = $orderColumn;
-        $this->orderType = strtoupper($orderType) === Order::ASC ? Order::ASC : Order::DESC;
+        $orderType = strtoupper($orderType) === Order::ASC ? Order::ASC : Order::DESC;
         $this->TaskCollection = new Collection(new Task());
-        $this->TaskCollection->addLimit(new Limit($this->page, $this->pageSize));
-        if ($this->orderColumn && $this->orderType) {
-            $this->TaskCollection->addOrder((new Order())->add($this->orderColumn, $this->orderType));
+        $this->TaskCollection->addLimit(new Limit($page, $this->pageSize));
+        if ($orderColumn && $orderType) {
+            $this->TaskCollection->addOrder((new Order())->add($orderColumn, $orderType));
         }
         $this->TaskCollection->prepare();
     }
