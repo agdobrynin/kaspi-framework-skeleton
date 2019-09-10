@@ -56,7 +56,7 @@
     </nav>
 </div>
 <div class="bd-main-container container">
-    <?php $this->include('globalComponents/flashes.php')?>
+    <?php $this->include('globalComponents/flashes')?>
 
     <section class="section">
         <div class="container">
