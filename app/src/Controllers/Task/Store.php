@@ -32,7 +32,7 @@ class Store extends Controller
             $validateError = true;
         }
         // Проверить на уникальность email при создании
-        if (empty($Task->id) && Task::findBy('email', $Task->email)->id) {
+        if (empty($Task->id) && Task::find(['email', $Task->email])->id) {
             FlashMessages::addFormValidator('Такой email уже зарегистрирован в базе', 'email');
             $validateError = true;
         }
