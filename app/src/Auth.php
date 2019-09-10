@@ -4,13 +4,12 @@ namespace App;
 
 class Auth
 {
-    // Временное хранение пары логин и пароль для авторизации
-    private const AUTH_PAIR = ['admin', '123'];
     private const SESSION_KEY = 'isAuth';
 
     public static function login(string $login, string $password): bool
     {
-        if (self::AUTH_PAIR === [$login, $password]) {
+        $authPair = [getenv('ADMIN_LOGIN'), getenv('ADMIN_PASSWORD')];
+        if ($authPair === [$login, $password]) {
             $_SESSION[self::SESSION_KEY] = true;
         } else {
             self::logout();

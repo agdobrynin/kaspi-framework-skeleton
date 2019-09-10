@@ -13,10 +13,6 @@ class Auth extends Controller
     {
         if (!UserAuth::isAuth()) {
             FlashMessages::add('Пройдите авторизацию', FlashMessages::WARNING);
-            FlashMessages::add(
-                '<strong>Это тестовый режим!</strong> Для авторизации: <ul><li>логин admin <li>пароль 123</li>',
-                FlashMessages::INFO
-            );
             $referer = $this->request->getEnv('HTTP_REFERER');
             $this->response->setBody(
                 $this->container->{View::class}->render('login', compact('referer'))
