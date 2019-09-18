@@ -7,14 +7,14 @@ $container = $app->container;
 $app->getContainer()->set(View::class, static function () use ($container): View {
         /** @var View $view */
         $view = new View($container->{Config::class});
-        // Пример добавления экспешнеша для View
+        // Пример добавления расширения для View
         // pathFor отдает паттрен роута по имени если есть
         /** @var Router $router */
         $router = $container->{Router::class};
         $view->addExtension('pathFor', static function (string $pathName, ?array $arg = null) use ($router) {
             return $router->getRoutePatternByName($pathName, $arg) ?: '';
         });
-        // Пример добавления экспешнеша для View
+        // Пример добавления расширения для View
         // URI вызов в шаблоне $this->addExtension('URI') вернет текущий URI из объекта REQUEST
         /** @var Request $request */
         $request = $container->{Request::class};
