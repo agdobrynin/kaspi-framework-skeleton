@@ -35,10 +35,11 @@ class City extends Migration
                             userName varchar(255),
                             email varchar(100),
                             content text,
-                            editByAdmin INTEGER(1) DEFAULT 0
+                            editByAdmin INTEGER(1) DEFAULT 0,
+                            completed INTEGER(1)
                         )');
             $pdo->exec('CREATE UNIQUE INDEX Tasks_email ON Tasks5bc3 (email)');
-            $pdo->exec('INSERT INTO Tasks5bc3(id, userName, email, content, editByAdmin) SELECT id, userName, email, content, editByAdmin FROM Tasks');
+            $pdo->exec('INSERT INTO Tasks5bc3(id, userName, email, content, editByAdmin, completed) SELECT id, userName, email, content, editByAdmin, completed FROM Tasks');
             $pdo->exec('DROP TABLE Tasks');
             $pdo->exec('ALTER TABLE Tasks5bc3 RENAME TO Tasks');
         } else {
