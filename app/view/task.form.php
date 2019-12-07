@@ -1,6 +1,7 @@
 <?php
 use Kaspi\FlashMessages as FM;
 /** @var \Kaspi\View $this */
+/** @var \App\Entity\Task $Task */
 $pageTitle = empty($Task->id) ? 'Добавить новую задачу' : 'Редактирование задачи';
 $formAction = $this->getExt('pathFor', 'task.add');
 $formValidation = FM::displayAsObjects(FM::FROM_VALIDATOR);
@@ -13,6 +14,52 @@ $this->layout('layouts/main', compact('pageTitle'));
     <?php /*мидлвара app/src/Middleware/CsrfMiddleware.php */
     echo $xCsrf; ?>
 
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Город подразделения</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <div class="select">
+                        <select name="city_id">
+                            <?php foreach ($cities as $city){?>
+                                <option <?php echo $Task->City()->id == $city->id ? 'selected' : ''?>
+                                    value="<?php echo $city->id?>"><?php echo $city->name?></option>
+                            <?php }?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Тип задачи</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control <?php echo !empty($formValidation->categories) ? 'has-icons-left' : '' ?>">
+                    <div class="select is-multiple <?php echo !empty($formValidation->categories) ? 'is-danger' : '' ?>">
+                        <select name="categories[]"
+                            multiple size="3">
+                            <?php foreach ($categories as $category){?>
+                                <option <?php echo !empty($taskCategoryIds) && in_array($category->id, $taskCategoryIds) ? 'selected' : ''?>
+                                        value="<?php echo $category->id?>"><?php echo $category->name?></option>
+                            <?php }?>
+                        </select>
+                        <?php if (!empty($formValidation->categories)) { ?>
+                            <span class="icon is-small is-left"><i class="fas fa-exclamation-triangle"></i></span>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php if (!empty($formValidation->categories)) { ?>
+                    <p class="help is-danger"><?php echo $formValidation->categories ?></p>
+                <?php } ?>
+                <p class="help is-info">Для отметки некскольких типов удерживайте кнопку Ctrl</p>
+            </div>
+        </div>
+    </div>
     <div class="field">
         <label class="label">Имя</label>
         <div class="control has-icons-left has-icons-right">

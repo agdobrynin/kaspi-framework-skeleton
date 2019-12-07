@@ -1,20 +1,20 @@
 {
-  "require": {
-    "php": "^7.2",
-    "ext-pdo": "*",
-    "symfony/dotenv": "v4.3.4",
-    "kaspi/kapi-framework": "dev-master",
-    "fzaninotto/faker": "^1.8"
-  },
-  "autoload": {
-    "psr-4": {
-      "App\\": "app/src"
-    }
-  },
-  "config": {
-    "process-timeout": 0
-  },
-  "scripts": {
-    "serve": "php -S 0.0.0.0:8080 -t public/"
-  }
+	"require" : {
+		"php" : "^7.2",
+		"ext-pdo" : "*",
+		"symfony/dotenv" : "v4.3.4",
+		"kaspi/kapi-framework" : "dev-master",
+		"fzaninotto/faker" : "^1.8"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"App\\" : "app/src"
+		}
+	},
+	"config" : {
+		"process-timeout" : 0
+	},
+	"scripts" : {
+		"serve" : "php -S 0.0.0.0:8080 -t public/"
+	}
 }

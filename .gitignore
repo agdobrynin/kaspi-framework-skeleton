@@ -9,3 +9,6 @@ phinx.yml
 !/logs/.gitkeep
 /store/*
 !/store/.gitkeep
+/.buildpath
+/.project
+/.settings

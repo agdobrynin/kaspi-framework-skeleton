@@ -3,9 +3,13 @@
 namespace App\Controllers\Task;
 
 use App\Auth;
+use App\Entity\Category;
+use App\Entity\City;
 use App\Entity\Task;
 use Kaspi\Controller;
 use Kaspi\FlashMessages;
+use Kaspi\Orm\Collection;
+use Kaspi\Orm\Query\Where;
 use Kaspi\View;
 
 class Store extends Controller
@@ -53,9 +57,29 @@ class Store extends Controller
             FlashMessages::addFormValidator('Задача должны быть более 10 символов', 'content');
             $validateError = true;
         }
+
+        // Привязать категории
+        $where = (new Where())->addIn('id', $this->request->getParam('categories') ?: []);
+        $taskCategoryIds = [];
+        if ($Task->category = (new Collection(new Category()))->where($where)->toArray()) {
+            // заполняем временную переменную с id-шниками категорий чтобы в шаблоне отметить нужные
+            foreach ($Task->category as $category) {
+                $taskCategoryIds[] = $category->id;
+            }
+        } else {
+            FlashMessages::addFormValidator('Необходимо отместить хотя бы один тип задачи', 'categories');
+            $validateError = true;
+        }
+
+        // Прявязать город
+        $city = City::find($this->request->getParam('city_id'));
+        $Task->city = $city;
+        $cities = (new Collection(new City()))->getEntities();
+
+        $categories = (new Collection(new Category()))->getEntities();
         // С валидацией беда
         if ($validateError) {
-            $this->response->setBody($this->container->{View::class}->render('task.form', compact('Task')));
+            $this->response->setBody($this->container->{View::class}->render('task.form', compact(['Task', 'cities', 'categories', 'taskCategoryIds'])));
             return;
         }
 

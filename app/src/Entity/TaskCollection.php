@@ -21,14 +21,14 @@ class TaskCollection
         $this->TaskCollection = new Collection(new TaskForCollection());
         $this->TaskCollection->limit(new Limit($page, $this->pageSize));
         if ($orderColumn && $orderType) {
-            $this->TaskCollection->order((new Order())->add($orderColumn, $orderType));
+            $order = (new Order())->add($orderColumn, $orderType);
+            $this->TaskCollection->order($order);
         }
-        $this->TaskCollection->prepare();
     }
 
-    public function collection(): Collection
+    public function collection(): \Iterator
     {
-        return $this->TaskCollection;
+        return $this->TaskCollection->getEntities();
     }
 
     public function pageTotal(): int
