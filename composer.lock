@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "fzaninotto/faker",
-            "version": "v1.8.0",
+            "version": "v1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de"
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f72816b43e74063c8b10357394b6bba8cb1c10de",
-                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
                 "shasum": ""
             },
             "require": {
@@ -26,12 +26,12 @@
             "require-dev": {
                 "ext-intl": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "squizlabs/php_codesniffer": "^1.5"
+                "squizlabs/php_codesniffer": "^2.9.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -54,7 +54,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2018-07-12T10:23:15+00:00"
+            "time": "2019-12-12T13:22:17+00:00"
         },
         {
             "name": "kaspi/kapi-framework",
@@ -62,12 +62,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/agdobrynin/kaspi-framework.git",
-                "reference": "e538b3783bab84b9e3dcdcccfb755a74f4fe99fc"
+                "reference": "4361c2e63ac4a6f7f7ca2c9c2a11b34edf551640"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/agdobrynin/kaspi-framework/zipball/e538b3783bab84b9e3dcdcccfb755a74f4fe99fc",
-                "reference": "e538b3783bab84b9e3dcdcccfb755a74f4fe99fc",
+                "url": "https://api.github.com/repos/agdobrynin/kaspi-framework/zipball/4361c2e63ac4a6f7f7ca2c9c2a11b34edf551640",
+                "reference": "4361c2e63ac4a6f7f7ca2c9c2a11b34edf551640",
                 "shasum": ""
             },
             "require": {
@@ -111,7 +111,7 @@
                 "micro",
                 "router"
             ],
-            "time": "2019-09-12T08:46:50+00:00"
+            "time": "2020-09-08T05:21:27+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -155,16 +155,16 @@
         },
         {
             "name": "splitbrain/php-cli",
-            "version": "1.1.5",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/splitbrain/php-cli.git",
-                "reference": "e982d40d074ab9f2669c3c0a2e40559b098cd894"
+                "reference": "fb4f888866d090b10e3e68292d197ca274cea626"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splitbrain/php-cli/zipball/e982d40d074ab9f2669c3c0a2e40559b098cd894",
-                "reference": "e982d40d074ab9f2669c3c0a2e40559b098cd894",
+                "url": "https://api.github.com/repos/splitbrain/php-cli/zipball/fb4f888866d090b10e3e68292d197ca274cea626",
+                "reference": "fb4f888866d090b10e3e68292d197ca274cea626",
                 "shasum": ""
             },
             "require": {
@@ -202,7 +202,7 @@
                 "optparse",
                 "terminal"
             ],
-            "time": "2018-09-29T07:51:34+00:00"
+            "time": "2019-12-12T08:24:54+00:00"
         },
         {
             "name": "symfony/dotenv",
@@ -274,5 +274,6 @@
         "php": "^7.2",
         "ext-pdo": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
