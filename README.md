@@ -1,7 +1,8 @@
 # kaspi-framework-skeleton
 
+Демо приложение для простого [фреймворрка](https://github.com/agdobrynin/kaspi-framework) собственной разработки демонстрирующим MVC паттерн для web приложений, с реализацией простого контейнера зависимостей, роутинга, рендеринга шаблонов, и очень простой ORM позволяющей работать моделями данных в базе.
 
-клонируем
+Клонируем
 ````bash
 git clone https://github.com/agdobrynin/kaspi-framework-skeleton.git
 ````
