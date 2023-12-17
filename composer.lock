@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a29bab2c298d88d61ac1e7d0df22410",
+    "content-hash": "ff6aa05f2eaac838ebdc5081ebf71936",
     "packages": [
         {
             "name": "fzaninotto/faker",
@@ -63,7 +63,7 @@
         },
         {
             "name": "kaspi/kapi-framework",
-            "version": "dev-master",
+            "version": "v0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/agdobrynin/kaspi-framework.git",
@@ -86,7 +86,6 @@
                 "friendsofphp/php-cs-fixer": "^2.15",
                 "roave/security-advisories": "dev-master"
             },
-            "default-branch": true,
             "bin": [
                 "bin/kaspi-migrate"
             ],
@@ -286,9 +285,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "kaspi/kapi-framework": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
