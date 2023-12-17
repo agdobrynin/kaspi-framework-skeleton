@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "fzaninotto/faker",
-            "version": "v1.9.1",
+            "version": "v1.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
+                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
+                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,12 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2019-12-12T13:22:17+00:00"
+            "support": {
+                "issues": "https://github.com/fzaninotto/Faker/issues",
+                "source": "https://github.com/fzaninotto/Faker/tree/v1.9.2"
+            },
+            "abandoned": true,
+            "time": "2020-12-11T09:56:16+00:00"
         },
         {
             "name": "kaspi/kapi-framework",
@@ -62,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/agdobrynin/kaspi-framework.git",
-                "reference": "4361c2e63ac4a6f7f7ca2c9c2a11b34edf551640"
+                "reference": "8c55e5c9724bd96d04a580de18b6640312393260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/agdobrynin/kaspi-framework/zipball/4361c2e63ac4a6f7f7ca2c9c2a11b34edf551640",
-                "reference": "4361c2e63ac4a6f7f7ca2c9c2a11b34edf551640",
+                "url": "https://api.github.com/repos/agdobrynin/kaspi-framework/zipball/8c55e5c9724bd96d04a580de18b6640312393260",
+                "reference": "8c55e5c9724bd96d04a580de18b6640312393260",
                 "shasum": ""
             },
             "require": {
@@ -81,17 +86,18 @@
                 "friendsofphp/php-cs-fixer": "^2.15",
                 "roave/security-advisories": "dev-master"
             },
+            "default-branch": true,
             "bin": [
                 "bin/kaspi-migrate"
             ],
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Kaspi\\": "src/kaspi"
-                },
                 "files": [
                     "src/kaspi/helpers/helpers.php"
-                ]
+                ],
+                "psr-4": {
+                    "Kaspi\\": "src/kaspi"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -111,7 +117,11 @@
                 "micro",
                 "router"
             ],
-            "time": "2020-09-08T05:21:27+00:00"
+            "support": {
+                "issues": "https://github.com/agdobrynin/kaspi-framework/issues",
+                "source": "https://github.com/agdobrynin/kaspi-framework/tree/v0.1.5"
+            },
+            "time": "2023-12-17T16:55:24+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -151,27 +161,31 @@
                 }
             ],
             "description": "A polyfill for getallheaders.",
+            "support": {
+                "issues": "https://github.com/ralouphie/getallheaders/issues",
+                "source": "https://github.com/ralouphie/getallheaders/tree/develop"
+            },
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
             "name": "splitbrain/php-cli",
-            "version": "1.1.7",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/splitbrain/php-cli.git",
-                "reference": "fb4f888866d090b10e3e68292d197ca274cea626"
+                "reference": "47cd2b2c1d976d22afb01e121985d59c4f98c031"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splitbrain/php-cli/zipball/fb4f888866d090b10e3e68292d197ca274cea626",
-                "reference": "fb4f888866d090b10e3e68292d197ca274cea626",
+                "url": "https://api.github.com/repos/splitbrain/php-cli/zipball/47cd2b2c1d976d22afb01e121985d59c4f98c031",
+                "reference": "47cd2b2c1d976d22afb01e121985d59c4f98c031",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.5.*"
+                "phpunit/phpunit": "^8"
             },
             "suggest": {
                 "psr/log": "Allows you to make the CLI available as PSR-3 logger"
@@ -202,7 +216,11 @@
                 "optparse",
                 "terminal"
             ],
-            "time": "2019-12-12T08:24:54+00:00"
+            "support": {
+                "issues": "https://github.com/splitbrain/php-cli/issues",
+                "source": "https://github.com/splitbrain/php-cli/tree/1.2.1"
+            },
+            "time": "2022-11-04T11:59:39+00:00"
         },
         {
             "name": "symfony/dotenv",
@@ -259,6 +277,9 @@
                 "env",
                 "environment"
             ],
+            "support": {
+                "source": "https://github.com/symfony/dotenv/tree/4.3"
+            },
             "time": "2019-08-03T21:50:52+00:00"
         }
     ],
@@ -275,5 +296,5 @@
         "ext-pdo": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.6.0"
 }

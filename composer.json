@@ -3,7 +3,7 @@
     "php": "^7.2",
     "ext-pdo": "*",
     "symfony/dotenv": "v4.3.4",
-    "kaspi/kapi-framework": "dev-master",
+    "kaspi/kapi-framework": "*",
     "fzaninotto/faker": "^1.8"
   },
   "autoload": {
