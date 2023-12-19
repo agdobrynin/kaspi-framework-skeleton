@@ -29,16 +29,16 @@ _в файле `.env` есть параметры для входа как ад�
 docker-compose up -d --build
 ```
 
-устанавливаем зависимсти в запущенном контейнере **web**
+Устанавливаем зависимости в запущенном контейнере **web** от имени пользователя **dev** в контейнере
 ````shell
-docker-compose exec web composer install
+docker-compose exec -u dev web composer install
 ````
 Настраиваем миграции БД для проекта и запускам их
 ```shell
-docker-compose exec web ./vendor/bin/kaspi-migrate -c config/config.php init
+docker-compose exec -u dev web ./vendor/bin/kaspi-migrate -c config/config.php init
 ```
 ```shell
-docker-compose exec web ./vendor/bin/kaspi-migrate -c config/config.php up
+docker-compose exec -u dev web ./vendor/bin/kaspi-migrate -c config/config.php up
 ````
 
 переходим по адресу http://localhost:8080 
