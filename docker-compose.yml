@@ -10,7 +10,6 @@ services:
             - '8080:8080'
         environment:
             WWWUSER: 1000
-            IGNITION_LOCAL_SITES_PATH: '${PWD}'
         volumes:
             - '.:/var/www/html'
         networks:
