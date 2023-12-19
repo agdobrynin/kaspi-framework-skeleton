@@ -2,6 +2,7 @@
   "require": {
     "php": "^7.2",
     "ext-pdo": "*",
+    "ext-sqlite3": "*",
     "symfony/dotenv": "v4.3.4",
     "kaspi/kapi-framework": "^0.1.5",
     "fzaninotto/faker": "^1.8"
