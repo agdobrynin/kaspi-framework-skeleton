@@ -1,7 +1,7 @@
 services:
     web:
         build:
-            context: ./docker/7.2
+            context: ./docker/php-7.2
             dockerfile: Dockerfile
             args:
                 WWWGROUP: 1000
